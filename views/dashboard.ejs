@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AFROBANG</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-11">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand font-weight-bolder" style="font-family: 'Trade Winds';" href="/">
+                            AFROBANG </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown_1" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Shop
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                        <a class="dropdown-item" href="/burundi-dress-collections"> Burundi Dress </a>
+                                        <a class="dropdown-item" href="/bangladeshi-dress-collections"> Bangladeshi
+                                            Dress</a>
+                                        <a class="dropdown-item" href="/russian-dress-collections"> Russian Dress </a>
+                                        <a class="dropdown-item" href="/zambian-dress-collections"> Zambian Dress </a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">Login</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/blog">Blog</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contact">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="/purchaseItem" method="POST">
+                                        <input type="hidden" name="email" value="<%= user.email %>">
+                                        <button type="submit" style="border:none;background-color:none;"
+                                            class="nav-link"><a>Purchase List</a></button>
+                                    </form>
+                                </li>
+                                <li class="nav-item">
+                                    <button type="button" style="border:none;background-color:none;" class="nav-link" data-toggle="modal"
+                                        data-target="#exampleModal" data-whatever="@getbootstrap">Write Your Blog</button>
+
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog"  role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">New Blog</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form action="/writeBlog" method="POST">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label for="recipient-name"
+                                                                class="col-form-label"><h3>Title</h3></label>
+                                                            <input type="text" style="background-color: transparent;" name="title" class="form-control" id="recipient-name">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="message-text"
+                                                                class="col-form-label"><h3>Blog Message</h3></label>
+                                                            <textarea class="form-control" style="background-color: transparent;" name="message" id="message-text" rows="10"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                        <input type="hidden" name="userEmail" value="<%= user.email %>">
+                                                        <input type="hidden" name="userName" value="<%= user.name %>">
+                                                        <button type="submit" class="btn btn-primary">Post Blog</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="/logout" method="POST">
+                                        <button type="submit" style="border:none;background-color:none;"
+                                            class="nav-link"><a>Log Out</a></button>
+                                    </form>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="/deleteUser" method="POST">
+                                        <input type="email" name="email" value="<%= user.email %>" hidden>
+                                        <button type="submit" style="border:none;background-color:none;"
+                                            class="nav-link"><a>Delete Account</a></button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <%- include("./partials/flash-msg") -%>
+
+    <div class="continer-fluid" style="background-color: #c2b5b5;text-align: center;">
+        <h4 style="color:white;margin:0 20vw;padding-top: 15px;font-size: x-large;"><b> Hello !!
+                <%= user.name %> !</b></h4>
+        <br>
+        <p style="margin:5vh 20vw;">Purchase your favourite item and get the world in your hand. Most obviously let us
+            know about the learing equipments. Your any comment is much valuable for us. To do that go to blog section
+            and type your experience after learning courses.Thank
+            you
+            <br>
+            <br>
+            <br>
+            <b>Happy Purchase !! Your purchaising Item will be send to your address within 3 business days.</b>
+        </p>
+        <hr>
+        <%- include( './partials/footer') %>
+    </div>
