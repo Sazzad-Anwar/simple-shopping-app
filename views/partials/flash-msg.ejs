@@ -1,26 +1,26 @@
 <% if(typeof errors != 'undefined'){ %> <% errors.forEach(function(error) { %>
-    <div class="alert alert-warning alert-dismissible fade show text-center text-uppercase" role="alert" style="margin-left:30%;margin-right:30%">
+    <div class="alert alert-warning alert-dismissible fade show text-center text-uppercase" role="alert" style="margin-left:auto;margin-right:auto">
       <%= error.msg %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-left:30%;margin-right:30%">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-left:auto;margin-right:auto">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <% }); %> <% } %> <% if(success_msg != ''){ %>
-    <div class="alert alert-success alert-dismissible fade show text-center text-uppercase" role="alert" style="margin-left:30%;margin-right:30%">
+    <div class="alert alert-success alert-dismissible fade show text-center text-uppercase" role="alert" style="margin-left:auto;margin-right:auto">
       <%= success_msg %>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <% } %> <% if(error_msg != ''){ %>
-    <div class="alert alert-danger alert-dismissible fade show text-center text-uppercase" role="alert" style="margin-left:30%;margin-right:30%">
+    <div class="alert alert-danger alert-dismissible fade show text-center text-uppercase" role="alert" style="margin-left:auto;margin-right:auto">
       <%= error_msg %>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <% } %> <% if(error != ''){ %>
-    <div class="alert alert-danger alert-dismissible fade show text-center text-uppercase" role="alert" style="margin-left:30%;margin-right:30%">
+    <div class="alert alert-danger alert-dismissible fade show text-center text-uppercase" role="alert" style="margin-left:auto;margin-right:auto">
       <%= error %>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
